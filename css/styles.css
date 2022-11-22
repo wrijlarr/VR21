@@ -1,7 +1,19 @@
-table{
-    background-color: blue;
+body{
+    background-color: rgb(112, 112, 214);
 }
 
 form{
-    background-color: red;
+    background: red;
+}
+
+thead{
+    text-decoration:  rgb(6, 6, 6);
+}
+
+tr{
+    font-size: 40px;
+}
+
+td{
+    text-emphasis-color: orange;
 }
