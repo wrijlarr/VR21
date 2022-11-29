@@ -1,0 +1,119 @@
+body {
+    background-color: black;
+}
+
+@media (min-width: 320px) {
+    body {
+        background-color: rgb(237, 11, 102);
+    }
+    .resize {
+        background-color: black;
+        height: 300px;
+        width: 300px
+    }
+    .small {
+        background-color: rgb(87, 14, 14);
+        height: 100px;
+        width: 100px
+
+    }
+}
+
+@media(min-width:320px) {
+    body {
+        background-color: orange;
+    }
+    .resize {
+        background-color: black;
+        height: 300px;
+        width: 300px
+    }
+    .small {
+        background-color: rgb(184, 246, 78);
+        height: 200px;
+        width: 200px
+
+    }
+       
+}
+
+@media(min-width:480px) {
+    body {
+        background-color: red;
+    }
+    .resize {
+        background-color: black;
+        height: 200px;
+        width: 200px
+    }
+    .small {
+        background-color: orange;
+        height: 50px;
+        width: 50px
+
+    }
+}
+@media(min-width:600px) {
+    body {
+        background-color: rgb(43, 0, 255);
+    }
+    .resize {
+        background-color: black;
+        height: 400px;
+        width: 400px
+    }
+    .small {
+        background-color: rgb(133, 125, 246);
+        height: 200px;
+        width: 200px
+
+    }
+}
+@media(min-width:801px) {
+    body {
+        background-color: rgb(52, 208, 62);
+    }
+    .resize {
+        background-color: black;
+        height: 300px;
+        width: 300px
+}
+    .small {
+        background-color: rgb(255, 202, 105);
+        height: 100px;
+        width: 100px
+}
+}
+@media(min-width:1025px) {
+    body {
+        background-color: rgb(0, 255, 247);
+    }
+    .resize {
+        background-color: black;
+        height: 500px;
+        width: 500px
+    }
+    .small {
+            background-color: rgb(237, 6, 6);
+            height: 200px;
+            width: 200px
+    }
+}
+@media(min-width:1281px) {
+    body {
+        background-color: rgb(225, 0, 255);
+    }
+    .resize {
+        background-color: black;
+        height: 600px;
+        width: 600px
+    }
+    .small {
+        background-color: orange;
+        height: 200px;
+        width: 200px
+        
+
+    }
+    
+}
