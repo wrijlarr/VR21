@@ -1,170 +1,464 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Bootstrap</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-<head>
-  <title>Bootstrap</title>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <!-- Bootstrap CSS v5.2.1 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
 
     <style>
-        .col-md-3 {
-            border: solid 1px black;
-        }
-
+      .row {
+        margin-bottom: 10px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <row>
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="" alt="">
-                    <div>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione repudiandae autem, quia dolore vero dolorem nemo laborum soluta labore facilis sit tempora, hic et aperiam minus temporibus a consequuntur consectetur!</p>
-                    </div>
+      <header>
+        <nav class="navbar bg-light">
+          <div class="container-fluid">
+            <a class="navbar-brand">Anime Characters</a>
+            <!-- Button trigger modal -->
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+            >
+              Add
+            </button>
+
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="exampleModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                      Characters
+                    </h1>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="mb-3">
+                        <label for="imageUrl" class="form-label"
+                          >Image Url</label
+                        >
+                        <input
+                          class="form-control"
+                          id="imageUrl"
+                          type="url"
+                          name="imageUrl"
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label for="title" class="form-label">Title</label>
+                        <input
+                          class="form-control"
+                          id="title"
+                          type="text"
+                          id="url"
+                          name="title"
+                        />
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="description" class="form-label"
+                          >Description</label
+                        >
+                        <input
+                          class="form-control"
+                          id="description"
+                          type="text"
+                          name="description"
+                        />
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                    <button type="button" class="btn btn-primary">Save</button>
+                  </div>
                 </div>
+              </div>
             </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="" alt="">
-                    <div>
-                        <p>Ratione voluptate culpa beatae iusto molestiae commodi. Molestiae natus magni fuga vero nulla officiis. Reiciendis magni, rem quaerat quidem voluptas mollitia inventore eligendi nemo cum labore accusamus in, nulla voluptatum?</p>
-                    </div>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="card">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8BPa2h3Pc3sFfx2t6yU09Rv0vl53NEe0oGESaMNtg0_sjNGTrn4J4dwOb8uIkLd_b80A&usqp=CAU"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <div>
+                  <button type="button" class="btn btn-primary">Update</button>
+                  <button type="button" class="btn btn-primary">Delete</button>
                 </div>
+              </div>
             </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="" alt="">
-                    <div>
-                        <p>Veniam sint consectetur voluptatibus! Voluptatem officiis laborum repellat laudantium dignissimos fugit et vero itaque quos eaque iusto ab error doloribus officia cum unde, corporis totam voluptates fugiat voluptas quaerat saepe.</p>
-                    </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8BPa2h3Pc3sFfx2t6yU09Rv0vl53NEe0oGESaMNtg0_sjNGTrn4J4dwOb8uIkLd_b80A&usqp=CAU"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <div>
+                  <button type="button" class="btn btn-primary">Update</button>
+                  <button type="button" class="btn btn-primary">Delete</button>
                 </div>
+              </div>
             </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="" alt="">
-                    <div>
-                        <p>Fugiat, voluptatibus eligendi consequatur voluptates accusamus magnam repudiandae. Quas iusto optio dignissimos praesentium perspiciatis minus nisi, voluptates excepturi laborum id reiciendis nobis earum nulla, iste, voluptatem qui. Explicabo, molestiae magni.</p>
-                    </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8BPa2h3Pc3sFfx2t6yU09Rv0vl53NEe0oGESaMNtg0_sjNGTrn4J4dwOb8uIkLd_b80A&usqp=CAU"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <div>
+                  <button type="button" class="btn btn-primary">Update</button>
+                  <button type="button" class="btn btn-primary">Delete</button>
                 </div>
+              </div>
             </div>
-        </row>
-        <row>
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="" alt="">
-                    <div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam minus ea dolor perferendis saepe inventore modi! Nesciunt aliquam labore unde, commodi voluptate rerum ipsam ullam ea! Earum, rerum aspernatur. Officiis!</p>
-                    </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8BPa2h3Pc3sFfx2t6yU09Rv0vl53NEe0oGESaMNtg0_sjNGTrn4J4dwOb8uIkLd_b80A&usqp=CAU"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <div>
+                  <button type="button" class="btn btn-primary">Update</button>
+                  <button type="button" class="btn btn-primary">Delete</button>
                 </div>
+              </div>
             </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="" alt="">
-                    <div>
-                        <p>Corrupti eos laborum facere nemo delectus eaque modi molestiae, consectetur autem fugit! Ut quam saepe accusantium consequuntur voluptates cum, repudiandae nam possimus voluptate, ipsum laboriosam beatae. Corrupti omnis iste molestias.</p>
-                    </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3">
+            <div class="card">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8BPa2h3Pc3sFfx2t6yU09Rv0vl53NEe0oGESaMNtg0_sjNGTrn4J4dwOb8uIkLd_b80A&usqp=CAU"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <div>
+                  <button type="button" class="btn btn-primary">Update</button>
+                  <button type="button" class="btn btn-primary">Delete</button>
                 </div>
+              </div>
             </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="" alt="">
-                    <div>
-                        <p>Eaque dolores illo omnis non. Molestias suscipit cupiditate cumque consectetur. Cupiditate nemo dolore aperiam placeat, vero praesentium vitae fuga molestias. Consectetur mollitia itaque molestias nobis, quaerat labore sit quas reprehenderit.</p>
-                    </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8BPa2h3Pc3sFfx2t6yU09Rv0vl53NEe0oGESaMNtg0_sjNGTrn4J4dwOb8uIkLd_b80A&usqp=CAU"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <div>
+                  <button type="button" class="btn btn-primary">Update</button>
+                  <button type="button" class="btn btn-primary">Delete</button>
                 </div>
+              </div>
             </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="" alt="">
-                    <div>
-                        <p>Delectus est, ullam officia aperiam enim eveniet facilis fuga nobis reprehenderit odit modi esse blanditiis minima incidunt voluptatibus dolorem suscipit ipsa sit, molestias explicabo aliquam. Assumenda laudantium eaque consectetur magnam!</p>
-                    </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8BPa2h3Pc3sFfx2t6yU09Rv0vl53NEe0oGESaMNtg0_sjNGTrn4J4dwOb8uIkLd_b80A&usqp=CAU"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <div>
+                  <button type="button" class="btn btn-primary">Update</button>
+                  <button type="button" class="btn btn-primary">Delete</button>
                 </div>
+              </div>
             </div>
-        </row>
-        <row>
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="" alt="">
-                    <div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo magnam aspernatur, aut maxime voluptas culpa et, placeat necessitatibus, nesciunt minus a quasi similique ipsa doloribus dignissimos quam iusto vel voluptatum.</p>
-                    </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8BPa2h3Pc3sFfx2t6yU09Rv0vl53NEe0oGESaMNtg0_sjNGTrn4J4dwOb8uIkLd_b80A&usqp=CAU"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <div>
+                  <button type="button" class="btn btn-primary">Update</button>
+                  <button type="button" class="btn btn-primary">Delete</button>
                 </div>
+              </div>
             </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="" alt="">
-                    <div>
-                        <p>Culpa eveniet sed placeat maxime. Similique, quia eveniet adipisci earum delectus veritatis aliquam aut minima quis natus. Error placeat cupiditate doloremque animi magni, quod distinctio fuga sunt voluptate fugiat aliquam.</p>
-                    </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3">
+            <div class="card">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8BPa2h3Pc3sFfx2t6yU09Rv0vl53NEe0oGESaMNtg0_sjNGTrn4J4dwOb8uIkLd_b80A&usqp=CAU"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <div>
+                  <button type="button" class="btn btn-primary">Update</button>
+                  <button type="button" class="btn btn-primary">Delete</button>
                 </div>
+              </div>
             </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="" alt="">
-                    <div>
-                        <p>Unde, alias. Quae, iure maxime nihil repellendus enim eum, perspiciatis inventore voluptates ipsa laborum rem pariatur corrupti. Ab sit iste et, vel dolor ducimus! Modi ab impedit omnis perferendis facilis!</p>
-                    </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8BPa2h3Pc3sFfx2t6yU09Rv0vl53NEe0oGESaMNtg0_sjNGTrn4J4dwOb8uIkLd_b80A&usqp=CAU"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <div>
+                  <button type="button" class="btn btn-primary">Update</button>
+                  <button type="button" class="btn btn-primary">Delete</button>
                 </div>
+              </div>
             </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="" alt="">
-                    <div>
-                        <p>Fugit, est! Optio quas amet animi molestiae. Dolore, autem quidem nemo ullam officia dolores voluptatum eius assumenda. Ex error vitae, nesciunt facere nisi omnis maxime nulla rerum, accusamus, culpa fugit.</p>
-                    </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8BPa2h3Pc3sFfx2t6yU09Rv0vl53NEe0oGESaMNtg0_sjNGTrn4J4dwOb8uIkLd_b80A&usqp=CAU"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <div>
+                  <button type="button" class="btn btn-primary">Update</button>
+                  <button type="button" class="btn btn-primary">Delete</button>
                 </div>
+              </div>
             </div>
-        </row>
-        <row>
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="" alt="">
-                    <div>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio deserunt praesentium, officia velit veritatis eligendi quaerat pariatur qui quasi unde totam! Officiis, mollitia corporis aspernatur magni dolore ea architecto rerum?</p>
-                    </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8BPa2h3Pc3sFfx2t6yU09Rv0vl53NEe0oGESaMNtg0_sjNGTrn4J4dwOb8uIkLd_b80A&usqp=CAU"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <div>
+                  <button type="button" class="btn btn-primary">Update</button>
+                  <button type="button" class="btn btn-primary">Delete</button>
                 </div>
+              </div>
             </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="" alt="">
-                    <div>
-                        <p>Sit dolorem fuga autem, in culpa cum labore. Itaque similique, quo quos, provident dolorem laborum, commodi earum accusamus nostrum totam a dicta illo harum nobis inventore. Sapiente at obcaecati molestias.</p>
-                    </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3">
+            <div class="card">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8BPa2h3Pc3sFfx2t6yU09Rv0vl53NEe0oGESaMNtg0_sjNGTrn4J4dwOb8uIkLd_b80A&usqp=CAU"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <div>
+                  <button type="button" class="btn btn-primary">Update</button>
+                  <button type="button" class="btn btn-primary">Delete</button>
                 </div>
+              </div>
             </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="" alt="">
-                    <div>
-                        <p>Reiciendis hic sed rem aperiam id non iure obcaecati nostrum ullam nesciunt, minus nobis veniam sapiente! Asperiores amet, totam autem repellendus perferendis consequatur error animi officia neque unde repellat modi.</p>
-                    </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8BPa2h3Pc3sFfx2t6yU09Rv0vl53NEe0oGESaMNtg0_sjNGTrn4J4dwOb8uIkLd_b80A&usqp=CAU"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <div>
+                  <button type="button" class="btn btn-primary">Update</button>
+                  <button type="button" class="btn btn-primary">Delete</button>
                 </div>
+              </div>
             </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="" alt="">
-                    <div>
-                        <p>Optio, aliquam. Iusto doloremque natus enim ipsum itaque, nobis quod nihil minus cum nulla culpa nostrum neque doloribus adipisci vitae quis sunt, sed nemo officia laudantium debitis? Tempore, blanditiis ad.</p>
-                    </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8BPa2h3Pc3sFfx2t6yU09Rv0vl53NEe0oGESaMNtg0_sjNGTrn4J4dwOb8uIkLd_b80A&usqp=CAU"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <div>
+                  <button type="button" class="btn btn-primary">Update</button>
+                  <button type="button" class="btn btn-primary">Delete</button>
                 </div>
+              </div>
             </div>
-        </row>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8BPa2h3Pc3sFfx2t6yU09Rv0vl53NEe0oGESaMNtg0_sjNGTrn4J4dwOb8uIkLd_b80A&usqp=CAU"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <div>
+                  <button type="button" class="btn btn-primary">Update</button>
+                  <button type="button" class="btn btn-primary">Delete</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
     </div>
-  <!-- Bootstrap JavaScript Libraries -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-  </script>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
-    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
-  </script>
-</body>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
