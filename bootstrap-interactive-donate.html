@@ -30,7 +30,7 @@
           <div class="container-fluid">
             <a class="navbar-brand">Anime Characters</a>
             <!-- Button trigger modal -->
-            <button type="button"class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="add-button">Add</button>
+            <button type="button"class="btn btn-primary" id="add-button">Add</button>
 
             <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -153,9 +153,16 @@ aria-hidden="true"
       crossorigin="anonymous"
     ></script>
 
+    <script src="./js/list.js"></script>
     <script>
-   
-        const contentCard = `
+      function writeName() {
+        console.log(name)
+
+      }
+    </script>
+    <script>
+        document.querySelector("#add-button").addEventListener("show", e => {
+          const contentCard = `
               <div class="col-md-3">
                 <div class="card">
                   <img
@@ -169,15 +176,68 @@ aria-hidden="true"
                       Some quick example text to build on the card title and make up
                       the bulk of the card's content.
                     </p>
-                    <div>
+                    <div class=btn-container>
                       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#updateModal">Update</button>
                       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</button>
                     </div>
                   </div>
                 </div>
-              </div>
-        `;
- 
+              </div>`;
+
+              const columnCard = document.createElement('div');
+              columnCard.setAttribute('class','col-md-3');
+
+              const card = document.createElement('div');
+              card.setAttribute('class', 'card');
+
+              const img= document.createElement("img");
+              img.setAttribute("src", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8BPa2h3Pc3sFfx2t6yU09Rv0vl53NEe0oGESaMNtg0_sjNGTrn4J4dwOb8uIkLd_b80A&usqp=CAU");
+              img.setAttribute("class", "card-img-top");
+
+              const cardBody = document.createElement("div");
+              cardBody.setAttribute("class", "cardBody");
+
+              const title= document.createElement("h5");
+              title.setAttribute()
+              title.innerText = "Card title";
+              const p = document.createElement("p");
+              p.setAttribute("calsse", "card-text");
+              p.innerText = "Some quick example text to build on the card title and make up the bulk of the card's content."
+              const btnContainer = document.createElement("div");
+              btnContainer.setAttribute("class", "btn-container");
+
+
+              cardBody.append(title);
+              cardBody.append(p);
+
+              card.append(img);
+              card.append(cardBody);
+              cardBody.append(btnContainer);
+
+              const updateBtn = document.createElement("button");
+              
+              updateBtn.setAttribute("type", "button");
+              updateBtn.setAttribute("classe", "btn btn-primary");
+              updateBtn.setAttribute("data-bs-tartget", "modal");
+              updateBtn.setAttribute("data-bs-toggle", "#updateModal");
+              
+
+              const deleteBtn = document.createElement("button");
+
+              deleteBtn.setAttribute("type", "button");
+              deleteBtn.setAttribute("classe", "btn btn-primary");
+              deleteBtn.setAttribute("data-bs-tartget", "modal");
+              deleteBtn.setAttribute("data-bs-toggle", "#deleteModal");
+              
+
+              columnCard.append(card);
+
+              document.querySelector.append(columnCard);
+
+        //       document.querySelector(".row")
+        // .insertAdjacentHTML("beforeend", contentCard);
+        })
+        </script>     
     </script>
   </body>
 </html>
