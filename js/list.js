@@ -80,6 +80,10 @@ function loadDataFromDB() {
   return data;
 }
 
+function saveDataToDB(data) {
+  localStorage.setItem(CARD_DATA_KEY, JSON.stringify(data));
+}
+
 function deleteCard(evt) {
   // The button that gets clicked
   const deleteBtn = evt.target;
@@ -87,12 +91,14 @@ function deleteCard(evt) {
   // Select button that contains card
   const cardCol = deleteBtn.closest(".col");
   const titleToDelete = cardCol.getAttribute(CARD_TITLE_ATTRIBUTE);
+  console.log(titleToDelete);
   let data = loadDataFromDB();
-  data.filter((cardData) => cardData.title !== titleToDelete);
+  data = data.filter((cardData) => cardData.title !== titleToDelete);
   saveDataToDB(data);
   cardCol.remove();
 }
 
-function updateCard(evt) {}
-const card = evt.target.closest(".card");
-const cardID = card.getAttribute("data-cardID");
+function updateCard(evt) {
+  const card = evt.target.closest(".card");
+  const cardID = card.getAttribute("data-cardID");
+}
