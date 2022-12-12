@@ -19,9 +19,6 @@ function handleAddSubmit(event) {
 
   //update card
 
-    //add new card
-  }
-
   // Clear input fields
   addForm.reset();
   addForm.removeAttribute("data-cardId");
