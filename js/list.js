@@ -10,10 +10,25 @@ function handleAddSubmit(event) {
   const imageUrl = addForm.elements.imageUrl.value;
   const title = addForm.elements.title.value;
   const description = addForm.elements.description.value;
-
   const cardData = { imageUrl, title, description };
+  const cardID = addForm.getAttribute("data-cardId"); //grab the id from the update button
+  event.preventDefault(); //refresh is a default behavior
+
   addCardToUI(cardData);
   addCardToDB(cardData);
+
+  //update card
+  if (cardID) {
+    //update card
+    cardCol = document.querySelector(`.card[data-cardId="${cardID}"]`); //selects the card with the data attribute that has val of card id
+    //populating card using cardData; selecting img element inside col and setting attributes
+    card.querySelector(".card-img-top").setAttribute("src", cardData.imageUrl);
+    card.querySelector(".card-img-top").setAttribute("alt", cardData.title);
+    card.querySelector(".card-title").textContent = cardData.title;
+    card.querySelector(".card-text").textContent = cardData.description;
+  } else {
+    //add new card
+  }
 
   // Clear input fields
   addForm.reset();
@@ -25,6 +40,7 @@ function handleAddSubmit(event) {
 
 function addCardToUI(cardData) {
   // create template with card in it
+  const cardID = Date.now();
   const cardCol = document.createElement("div");
   cardCol.classList.add("col");
   cardCol.innerHTML = `
@@ -55,7 +71,7 @@ function addCardToUI(cardData) {
   deleteBtn.addEventListener("click", deleteCard);
   cardCol.setAttribute(CARD_TITLE_ATTRIBUTE, cardData.title);
 
-  //Add Cardcol to UI
+  //Add cardCol to UI
   document.getElementById("cardContainer");
   cardContainer.append(cardCol);
 }
@@ -91,7 +107,6 @@ function deleteCard(evt) {
   // Select button that contains card
   const cardCol = deleteBtn.closest(".col");
   const titleToDelete = cardCol.getAttribute(CARD_TITLE_ATTRIBUTE);
-  console.log(titleToDelete);
   let data = loadDataFromDB();
   data = data.filter((cardData) => cardData.title !== titleToDelete);
   saveDataToDB(data);
