@@ -18,15 +18,7 @@ function handleAddSubmit(event) {
   addCardToDB(cardData);
 
   //update card
-  if (cardID) {
-    //update card
-    cardCol = document.querySelector(`.card[data-cardId="${cardID}"]`); //selects the card with the data attribute that has val of card id
-    //populating card using cardData; selecting img element inside col and setting attributes
-    card.querySelector(".card-img-top").setAttribute("src", cardData.imageUrl);
-    card.querySelector(".card-img-top").setAttribute("alt", cardData.title);
-    card.querySelector(".card-title").textContent = cardData.title;
-    card.querySelector(".card-text").textContent = cardData.description;
-  } else {
+
     //add new card
   }
 
