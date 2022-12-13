@@ -27,7 +27,8 @@ const arrayOfObjects = [
 const SUGGESTIONS_ID = "suggestions";
 
 const searchInput = document.getElementById("search");
-searchInput.addEventListener("keyup", handleKeyUp);
+const processChange = debounce(() => handleKeyUp());
+searchInput.addEventListener("keyup", processChange);
 
 function handleKeyUp(e) {
   const userInput = searchInput.value.toLowerCase();
@@ -64,4 +65,14 @@ function clearSuggestions() {
   while (ul.firstElementChild) {
     ul.firstElementChild.remove();
   }
+}
+
+function debounce(func, timeout = 300) {
+  let timer;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      func.apply(this, args); //calls the funciton with the args
+    }, timeout);
+  };
 }
