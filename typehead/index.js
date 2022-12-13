@@ -35,7 +35,7 @@ function handleKeyUp(e) {
 
   if (userInput) {
     // words that contain the text the user has typed
-    // alt use .contains instead of starts
+    // alt use .contains instead of startswith
     const suggestions = arrayOfObjects.filter((result) =>
       result.name.toLowerCase().startsWith(userInput)
     );
@@ -46,13 +46,18 @@ function handleKeyUp(e) {
 function showSuggestions(suggestions) {
   const ul = document.getElementById(SUGGESTIONS_ID);
 
-  suggestions.forEach((result) => {
-    const li = document.createElement("li");
-    li.innerHTML = `
+  if (suggestions.length === 0) {
+    ul.innerHTML = `<li>No matichng results</li>`;
+  } else {
+    // Show new suggestions
+    suggestions.forEach((result) => {
+      const li = document.createElement("li");
+      li.innerHTML = `
             <a href=":=${result.link}">${result.name}</a>
         `;
-    ul.append(li);
-  });
+      ul.append(li);
+    });
+  }
 }
 function clearSuggestions() {
   const ul = document.getElementById(SUGGESTIONS_ID);
