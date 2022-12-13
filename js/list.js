@@ -105,4 +105,5 @@ function deleteCard(evt) {
 function updateCard(evt) {
   const card = evt.target.closest(".card");
   const cardID = card.getAttribute("data-cardID");
+  
 }
