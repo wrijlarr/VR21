@@ -27,8 +27,7 @@ const arrayOfObjects = [
 const SUGGESTIONS_ID = "suggestions";
 
 const searchInput = document.getElementById("search");
-const processChange = debounce(() => handleKeyUp);
-searchInput.addEventListener("keyup", processChange);
+searchInput.addEventListener("keyup", debounce(handleKeyUp));
 
 function handleKeyUp(e) {
   const userInput = searchInput.value.toLowerCase();
