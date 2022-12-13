@@ -31,11 +31,13 @@ searchInput.addEventListener("keyup", handleKeyUp);
 
 function handleKeyUp(e) {
   const userInput = searchInput.value.toLowerCase();
+  clearSuggestions();
 
   if (userInput) {
     // words that contain the text the user has typed
+    // alt use .contains instead of starts
     const suggestions = arrayOfObjects.filter((result) =>
-      result.name.toLowerCase().includes(userInput)
+      result.name.toLowerCase().startsWith(userInput)
     );
     showSuggestions(suggestions);
   }
@@ -43,8 +45,6 @@ function handleKeyUp(e) {
 
 function showSuggestions(suggestions) {
   const ul = document.getElementById(SUGGESTIONS_ID);
-
-  clearSuggestions();
 
   suggestions.forEach((result) => {
     const li = document.createElement("li");
