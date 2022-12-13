@@ -1,26 +1,15 @@
 const arrayOfObjects = [
   { name: "Fox", link: "foxnews.com" },
-
   { name: "Fandango", link: "fandango.com" },
-
   { name: "CNN", link: "cnn.com" },
-
   { name: "Google", link: "google.com" },
-
   { name: "YouTube", link: "youtube.com" },
-
   { name: "Instagram", link: "instagram.com" },
-
   { name: "Amazon", link: "amazon.com" },
-
   { name: "RideFox", link: "ridefox.com" },
-
   { name: "Udemy", link: "udemy.com" },
-
   { name: "Telegram", link: "telegram.org" },
-
   { name: "Discord", link: "discord.com" },
-
   { name: "Slack", link: "slack.com" },
 ];
 
