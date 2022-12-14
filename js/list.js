@@ -1,9 +1,29 @@
 const CARD_DATA_KEY = "card-data";
-const CARD_TITLE_ATTRIBUTE = "data-list-title";
+const CARD_TITLE_ATTRIBUTE = "data-card-details";
 
 const addForm = document.querySelector("#addModal form");
 addForm.addEventListener("submit", handleAddSubmit);
 window.addEventListener("load", addAllCardsToUI);
+
+// delete button
+const deleteBtn = document.querySelector("#deleteModal .btn-danger");
+
+const deleteModal = document.querySelector("#deleteModal");
+deleteBtn.addEventListener("click", deleteCard);
+deleteModal.addEventListener("show.bs.modal", setIdAttribute);
+
+// update button
+const updateBtn = document.querySelector("#saveChanges");
+const updateModal = document.querySelector("#updateModal");
+updateModal.addEventListener("show.bs.modal", setIdAttribute);
+updateBtn.addEventListener("click", updateCard);
+
+function setIdAttribute(e) {
+  let modalTrigger = e.relatedTarget
+    .closest(".col")
+    .getAttribute(CARD_TITLE_ATTRIBUTE);
+  e.target.dataset.cardId = modalTrigger;
+}
 
 function handleAddSubmit(event) {
   event.preventDefault();
@@ -11,8 +31,7 @@ function handleAddSubmit(event) {
   const title = addForm.elements.title.value;
   const description = addForm.elements.description.value;
   const cardData = { imageUrl, title, description };
-  const cardID = addForm.getAttribute("data-cardId"); //grab the id from the update button
-  event.preventDefault(); //refresh is a default behavior
+  cardData.id = Date.now();
 
   addCardToUI(cardData);
   addCardToDB(cardData);
@@ -29,7 +48,6 @@ function handleAddSubmit(event) {
 
 function addCardToUI(cardData) {
   // create template with card in it
-  const cardID = Date.now();
   const cardCol = document.createElement("div");
   cardCol.classList.add("col");
   cardCol.innerHTML = `
@@ -38,10 +56,10 @@ function addCardToUI(cardData) {
     <div class="card-body">
       <h5 class="card-title">Card title</h5>
       <p class="card-text"></p>
-      <button type="button" class="btn btn-primary">
+      <button id="saveChanges" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#updateModal">
       Update
       </button>
-      <button type="button" class="btn btn-danger">
+      <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
       Delete
       </button>
     </div>
@@ -56,9 +74,8 @@ function addCardToUI(cardData) {
   cardCol.querySelector(".card-text").textContent = cardData.description;
 
   // Enable delete funtionality
-  const deleteBtn = cardCol.querySelector(".btn-danger");
-  deleteBtn.addEventListener("click", deleteCard);
-  cardCol.setAttribute(CARD_TITLE_ATTRIBUTE, cardData.title);
+
+  cardCol.setAttribute(CARD_TITLE_ATTRIBUTE, cardData.id);
 
   //Add cardCol to UI
   document.getElementById("cardContainer");
@@ -90,20 +107,41 @@ function saveDataToDB(data) {
 }
 
 function deleteCard(evt) {
-  // The button that gets clicked
-  const deleteBtn = evt.target;
+  const idToDelete = Number(evt.target.closest("#deleteModal").dataset.cardId);
+  console.log(idToDelete);
 
-  // Select button that contains card
-  const cardCol = deleteBtn.closest(".col");
-  const titleToDelete = cardCol.getAttribute(CARD_TITLE_ATTRIBUTE);
+  let cardToDelete = document.querySelector(
+    `#cardContainer [data-card-details="${idToDelete}"]`
+  );
+  console.log(cardToDelete);
+
   let data = loadDataFromDB();
-  data = data.filter((cardData) => cardData.title !== titleToDelete);
+  data = data.filter((cardData) => cardData.id !== idToDelete);
   saveDataToDB(data);
-  cardCol.remove();
+  cardToDelete.remove();
 }
 
-function updateCard(evt) {
-  const card = evt.target.closest(".card");
-  const cardID = card.getAttribute("data-cardID");
-  
+function updateCard(event) {
+  let data = loadDataFromDB();
+  const idToUpdate = Number(
+    document.querySelector("#updateModal").getAttribute("data-card-id")
+  );
+  let cardToUpdate = document.querySelector(
+    `#cardContainer [data-card-details="${idToUpdate}"]`
+  );
+
+  const findCard = data.find((cardData) => cardData.id === idToUpdate);
+  // update on the page, not on the DB
+  const uImageUrl = document.getElementById("updateImgUrl").value;
+  const uTitle = document.getElementById("updateTitle").value;
+  const uDesc = document.getElementById("updateDesc").value;
+
+  cardToUpdate.querySelector(".card-title").textContent = uTitle;
+  cardToUpdate.querySelector(".card-text").textContent = uDesc;
+  cardToUpdate.querySelector(".card-img-top").setAttribute("src", uImageUrl);
+
+  findCard.title = uTitle;
+  findCard.imageUrl = uImageUrl;
+  findCard.description = uDesc;
+  saveDataToDB(data);
 }
